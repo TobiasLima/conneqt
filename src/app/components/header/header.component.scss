@@ -1,0 +1,22 @@
+header {
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+
+    @media(max-width: 768px) {
+      justify-content: center;
+    }
+
+    img.logo {
+      width: 230px;
+    }
+
+    nav {
+      a + a {
+        margin-left: 2rem;
+      }
+    }
+  }
+}

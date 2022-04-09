@@ -1,0 +1,58 @@
+<section class="banner">
+  <div class="banner-content">
+    <h4>Making distances a meaningless thing.</h4>
+    <h1>we are <span>conneqt</span></h1>
+    <nav>
+      <a href="#" class="btn">Sign Up for a Free Trial</a>
+      <a href="#" class="btn outline" *ngIf="isMobilePhone$ | async">Login</a>
+    </nav>
+  </div>
+
+  <img src="../assets/images/banner.png" alt="Making distances a meaningless thing." />
+</section>
+
+<section class="your-team">
+  <img src="../assets/images/your-team.jpg" alt="Your team always connected" *ngIf="!(isMobilePhone$ | async)" />
+
+  <div class="your-team-content">
+    <h3>Your team always connected</h3>
+
+    <ul>
+      <li>One on one and group meetings</li>
+      <li>Record Meetings</li>
+      <li>Screen share</li>
+      <li>Share control over screens</li>
+      <li>Schedule and send reminders</li>
+    </ul>
+  </div>
+</section>
+
+<section class="free-trial">
+  <h2>Get a free trial</h2>
+  <p>See how Conneqt can solve your communication needs.<br />Start a trial now.</p>
+  <a class="btn" href="#">Sign Up for a Free Trial</a>
+</section>
+
+<section class="license">
+  <h3>Or purchase a license</h3>
+
+  <p>Contact your local reseller to request a license trial or purchase Conneqt</p>
+
+  <div class="resellers">
+    <div class="reseller" *ngFor="let reseller of resellers;let i = index;">
+      <p>{{ reseller.location }}</p>
+      <div class="reseller-list" *ngIf="!(isMobilePhone$ | async)">
+        <div class="reseller-item" *ngFor="let item of resellers[i].items">
+          <p class="reseller-name">{{ item.name }}</p>
+          <a href="{{ item.website }}" target="_blank">Company Website <mat-icon aria-hidden="false">open_in_new</mat-icon></a>
+          <p><mat-icon aria-hidden="false">phone</mat-icon> {{ item.phone }}</p>
+        </div>
+      </div>
+      <div class="reseller-list" *ngIf="isMobilePhone$ | async">
+        <div class="reseller-item" *ngFor="let item of resellers[i].items">
+          <a href="{{ item.website }}" target="_blank">{{ item.name }} <mat-icon aria-hidden="false">open_in_new</mat-icon></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

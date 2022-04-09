@@ -1,1 +1,144 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --white: #fff;
+  --gray-100: #e0e0e0;
+  --gray-500: #9b9a98;
+  --bg-gray: #f2f1ee;
+  --primaryColor: #fd4d46;
+  --containerWidth: 100%;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+body { font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.container {
+  width: var(--containerWidth);
+  max-width: 100%;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  background-color: var(--primaryColor);
+  color: var(--white);
+  border: 1px solid var(--primaryColor);
+
+  &.outline {
+    background-color: var(--white);
+    color: var(--primaryColor);
+    border: 1px solid var(--gray-100);
+  }
+}
+
+h1 {
+  font-size: 6.5rem;
+
+  @media(max-width: 768px) {
+    font-size: 5rem;
+  }
+
+  @media(max-width: 540px) {
+    font-size: 3rem;
+  }
+}
+
+h2 {
+  font-size: 3.2rem;
+
+  @media(max-width: 768px) {
+    font-size: 2.8rem;
+  }
+
+  @media(max-width: 540px) {
+    font-size: 2.5rem;
+  }
+}
+
+h3 {
+  font-size: 2.8rem;
+
+  @media(max-width: 768px) {
+    font-size: 2.4rem;
+  }
+
+  @media(max-width: 540px) {
+    font-size: 2rem;
+  }
+}
+
+h4 {
+  font-size: 2rem;
+
+  @media(max-width: 768px) {
+    font-size: 1.8rem;
+  }
+
+  @media(max-width: 540px) {
+    font-size: 1.5rem;
+  }
+}
+
+h5 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+// FORM
+form {
+  width: 400px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    input {
+      padding: .8rem;
+      border-radius: 5px;
+      border: 1px solid var(--gray-500);
+      background-color: transparent;
+    }
+
+    span {
+      font-size: .8rem;
+      margin-top: .2rem;
+    }
+
+    .validation-error {
+      font-size: .8rem;
+      color: #ff2a2a;
+      font-weight: 500;
+      margin-left: auto;
+    }
+  }
+
+  button[type="submit"] {
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+}
+
