@@ -14,9 +14,6 @@ export class HomeComponent implements OnInit {
   constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnInit(): void {
-    if (this.breakpointObserver.isMatched('(min-width: 769px)')) {
-      console.info('Teste');
-    }
     this.isMobilePhone$ = this.breakpointObserver
       .observe('(min-width: 768px)')
       .pipe(map((result) => !result.matches));
