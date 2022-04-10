@@ -102,10 +102,12 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/wowjs/css/libs/animate.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/wowjs/dist/wow.js"
+            ]
           }
         }
       }
