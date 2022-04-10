@@ -5,29 +5,43 @@
   --gray-500: #9b9a98;
   --bg-gray: #f2f1ee;
   --primaryColor: #fd4d46;
-  --containerWidth: 100%;
 }
 
+$theme-colors: (
+  "primary": #fd4d46,
+  "danger": #ff4136
+);
+
+$font-family-base: 400;
+
+$display-font-sizes: (
+  1: 6rem,
+  2: 4rem,
+  3: 2.5rem,
+  4: 1.8rem,
+  5: 1.4rem,
+  6: 1rem
+);
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
-html, body { height: 100%; }
 body { font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-.container {
-  width: var(--containerWidth);
-  max-width: 100%;
-  padding: 0 2rem;
-  margin: 0 auto;
-}
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+img {
+  max-width: 100%;
 }
 
 .btn {
@@ -38,68 +52,25 @@ a {
   background-color: var(--primaryColor);
   color: var(--white);
   border: 1px solid var(--primaryColor);
+  transition: .4s;
 
   &.outline {
     background-color: var(--white);
     color: var(--primaryColor);
     border: 1px solid var(--gray-100);
   }
-}
 
-h1 {
-  font-size: 6.5rem;
-
-  @media(max-width: 768px) {
-    font-size: 5rem;
-  }
-
-  @media(max-width: 540px) {
-    font-size: 3rem;
+  &:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   }
 }
 
-h2 {
-  font-size: 3.2rem;
+.btn-primary {
+  color: var(--white);
 
-  @media(max-width: 768px) {
-    font-size: 2.8rem;
+  &:hover {
+    color: var(--white);
   }
-
-  @media(max-width: 540px) {
-    font-size: 2.5rem;
-  }
-}
-
-h3 {
-  font-size: 2.8rem;
-
-  @media(max-width: 768px) {
-    font-size: 2.4rem;
-  }
-
-  @media(max-width: 540px) {
-    font-size: 2rem;
-  }
-}
-
-h4 {
-  font-size: 2rem;
-
-  @media(max-width: 768px) {
-    font-size: 1.8rem;
-  }
-
-  @media(max-width: 540px) {
-    font-size: 1.5rem;
-  }
-}
-
-h5 {
-  font-size: 1.5rem;
-}
-
-p {
-  font-size: 1.2rem;
 }
 
 // FORM
@@ -141,4 +112,3 @@ form {
     cursor: pointer;
   }
 }
-

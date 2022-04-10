@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgwWowService } from 'ngx-wow';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +11,9 @@ export class SignupComponent implements OnInit {
   signUpForm!: FormGroup;
   formSent: boolean = false;
 
-  constructor() {}
+  constructor(private wowService: NgwWowService) {
+    this.wowService.init();
+  }
 
   ngOnInit(): void {
     this.signUpForm = new FormGroup({

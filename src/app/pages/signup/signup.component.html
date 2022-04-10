@@ -1,49 +1,56 @@
 <section class="form" *ngIf="!(formSent)">
-  <h2>Free-Trial Sign Up</h2>
-  <h4>Get started and experience Conneqt today.</h4>
+  <h2 class="display-2 wow fadeInUp">Free-Trial Sign Up</h2>
+  <h3 class="display-3 wow fadeInUp">Get started and experience Conneqt today.</h3>
 
   <form (ngSubmit)="submit()" [formGroup]="signUpForm" #formDir="ngForm">
-    <div class="form-field">
-      <input type="text" placeholder="Company Name" required formControlName="company" />
+    <div class="form-field form-floating wow fadeInUp">
+      <input class="form-control" type="text" required formControlName="company" id="company" placeholder="Company Name" />
+      <label for="company">Company Name</label>
       <div class="validation-error" *ngIf="company.invalid && formDir.submitted">Company name is required</div>
     </div>
-    <div class="form-field">
-      <input type="text" placeholder="Segment" required formControlName="segment" />
+    <div class="form-field form-floating wow fadeInUp">
+      <input class="form-control" type="text" required formControlName="segment" id="segment" placeholder=" " />
+      <label for="segment">Segment</label>
       <div class="validation-error" *ngIf="segment.invalid && formDir.submitted">Segment is required</div>
     </div>
-    <div class="form-field">
-      <input type="number" placeholder="Number of users*" required formControlName="users" />
+    <div class="form-field form-floating wow fadeInUp">
+      <input class="form-control" type="number" required formControlName="users" id="users" placeholder=" " />
+      <label for="users">Number of users*</label>
       <span>*How many devices would have Conneqt installed.</span>
       <div class="validation-error" *ngIf="users.invalid && formDir.submitted">Number of users is required</div>
     </div>
-    <div class="form-field">
-      <input type="text" placeholder="Full Name" required formControlName="name" />
+    <div class="form-field form-floating wow fadeInUp">
+      <input class="form-control" type="text" required formControlName="name" id="name" placeholder=" " />
+      <label for="name">Full Name</label>
       <div class="validation-error" *ngIf="name.invalid && formDir.submitted">Name is required</div>
     </div>  
-    <div class="form-field">
-      <input type="email" placeholder="Email" required formControlName="email" />
+    <div class="form-field form-floating wow fadeInUp">
+      <input class="form-control" type="email" required formControlName="email" id="email" placeholder=" " />
+      <label for="email">Email</label>
       <div class="validation-error" *ngIf="email.invalid && formDir.submitted">
         <div *ngIf="email.errors?.['required']">Email is required</div>
         <div *ngIf="email.errors?.['email']">Email is invalid</div>
       </div>
     </div>
-    <div class="form-field">
-      <input type="text" placeholder="Telephone" required formControlName="phone" />
+    <div class="form-field form-floating wow fadeInUp">
+      <input class="form-control" type="text" required formControlName="phone" id="phone" placeholder=" " />
+      <label for="phone">Telephone</label>
       <div class="validation-error" *ngIf="phone.invalid && formDir.submitted">Telephone is required</div>
     </div>
-    <div class="form-field">
-      <input type="password" placeholder="Password" required formControlName="password" />
+    <div class="form-field form-floating wow fadeInUp">
+      <input class="form-control" type="password" required formControlName="password" id="password" placeholder=" " />
+      <label for="password">Password</label>
       <div class="validation-error" *ngIf="password.invalid && formDir.submitted">Password is required</div>
     </div>
 
-    <button type="submit" class="btn">Sign Up and Try for Free</button>
+    <button type="submit" class="btn btn-primary wow fadeInUp">Sign Up and Try for Free</button>
   </form>
 </section>
 
-<section class="success-message" *ngIf="formSent">
-  <h2>Free-Trial Sign Up</h2>
-  <h4>Get started and experience Conneqt today.</h4>
+<section class="success-message wow BounceIn" *ngIf="formSent">
+  <h2 class="display-2">Free-Trial Sign Up</h2>
+  <h3 class="display-3">Get started and experience Conneqt today.</h3>
   <p>A confirmation email with your credentials was sent to your email address.</p>
-  <button class="btn" (click)="resetForm()">Get started with Conneqt</button>
+  <button class="btn btn-primary" (click)="resetForm()">Get started with Conneqt</button>
 </section>
 

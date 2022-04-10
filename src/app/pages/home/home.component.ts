@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { map } from 'rxjs/operators';
+import { NgwWowService } from 'ngx-wow';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,12 @@ import { map } from 'rxjs/operators';
 export class HomeComponent implements OnInit {
   isMobilePhone$: Observable<boolean>;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private wowService: NgwWowService
+  ) {
+    this.wowService.init();
+  }
 
   ngOnInit(): void {
     this.isMobilePhone$ = this.breakpointObserver
